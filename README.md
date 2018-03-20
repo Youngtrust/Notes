@@ -75,6 +75,24 @@ Step 4 :- Add logics to the promise object.
 
 <hr />
 <h3>What is asynchronous controller?</h3>
+Asynchronous action methods are useful when an action must perform several independent long running operations.
+
+<blockquote>A typical use for the AsyncController class is long-running Web service calls.
+</blockquote>
+
+Should my database calls be asynchronous ?
+
+The IIS thread pool can often handle many more simultaneous blocking requests than a database server. If the database is the bottleneck, asynchronous calls will not speed up the database response. Without a throttling mechanism, efficiently dispatching more work to an overwhelmed database server by using asynchronous calls merely shifts more of the burden to the database. If your DB is the bottleneck, asynchronous calls won’t be the magic bullet.
+
+You should have a look at 1 and 2 references
+
+Derived from @PanagiotisKanavos comments:
+<blockquote>
+Moreover, async doesn't mean parallel. Asynchronous execution frees a valuable threadpool thread from blocking for an external resource, for no complexity or performance cost. This means the same IIS machine can handle more concurrent requests, not that it will run faster.
+
+You should also consider that blocking calls start with a CPU-intensive spinwait. During stress times, blocking calls will result in escalating delays and app pool recycling. Asynchronous calls simply avoid this
+</blockquote>
+<hr />
 
 <h3>What is http verbs methods you have use?</h3>
 
