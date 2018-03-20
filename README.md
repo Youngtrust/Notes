@@ -73,6 +73,24 @@ Step 3 :- Get Promise object from deferred object.
 
 Step 4 :- Add logics to the promise object.
 
+<hr />
+<h3>What is asynchronous controller?</h3>
 
+<hr />
+<h3>What is http verbs methods you have use?</h3>
+<hr />
+<h3>What is patch?</h3>
+<hr />
+<h3>How you used action filters? Where you used?</h3>
+<hr />
+<h3>How do you Authentication in MVC? How it works??</h3>
+<hr />
+<h3>How do you perform authorization?</h3>
+<hr />
+<h3>What is bundling?</h3>
+<hr />
+<h3>Diff btw action result and view result?</h3>
+<hr />
+<h3>How do you perform validation in MVC?</h3>
+<hr />
 
- 
