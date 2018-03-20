@@ -1,7 +1,7 @@
 
 Is there some easy way to handle multiple submit buttons from the same form? Example:
 
-<% Html.BeginForm("MyAction", "MyController", FormMethod.Post); %>
-<input type="submit" value="Send" />
-<input type="submit" value="Cancel" />
-<% Html.EndForm(); %>
+<pre class="default prettyprint prettyprinted" style=""><code><span class="pun">&lt;%</span><span class="pln"> </span><span class="typ">Html</span><span class="pun">.</span><span class="typ">BeginForm</span><span class="pun">(</span><span class="str">"MyAction"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"MyController"</span><span class="pun">,</span><span class="pln"> </span><span class="typ">FormMethod</span><span class="pun">.</span><span class="typ">Post</span><span class="pun">);</span><span class="pln"> %&gt;
+</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Send"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"Cancel"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+</span><span class="pun">&lt;%</span><span class="pln"> </span><span class="typ">Html</span><span class="pun">.</span><span class="typ">EndForm</span><span class="pun">();</span><span class="pln"> %&gt;</span></code></pre>
