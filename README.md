@@ -16,7 +16,7 @@ Here any type of actionresult such as ViewResult, Jsonresult,PartialViewResult a
 Then the corresponding view is located and rendering is done on to the browser with appropriate response.
 
 
-<h3>Authentication in MVC<h3>
+<h3>Authentication in MVC</h3>
 form based authentication
 Some of the things we need for Authentication include:
 
