@@ -30,7 +30,64 @@ MVC supports the method overloading but it doesn't support method overloading ba
   
   public string SayHello(string name)
   {
-  
       return "Hello" + name + "from 'SayHello'"
   }
  </code>
+ 
+ We need to decorate our action method with two attributes, like [HpptGet] and [HttpPost]. We can use the ActionName attribute to expose two methods with the same name as actions with different names.
+<br />
+<code>
+  
+public class HomeController : Controller  
+{
+
+    [ActionName("SayHelloWithOutName")]  
+    public string SayHello()  
+    {  
+        return "Hello from 'SayHello(SayHelloWithOutName)'.";  
+    }  
+    public string SayHello(string name)  
+    {  
+        return "Hello " + name + " from 'SayHello' ";  
+    }  
+    public string SayHi()  
+    {  
+        return "hi from 'SayHi'.";  
+    }  
+}  
+
+</code>
+We can create our own ActionFilter derived from ActionMethodSelectorAttribute. Here we are checking the URL parameter then invoke the appropriate method.
+
+<code>
+
+public class MyActionSelectorAttribute : ActionMethodSelectorAttribute  
+{ 
+
+    public MyActionSelectorAttribute(string valueName)  
+    {  
+        ValueName = valueName;  
+    }  
+    public override bool IsValidForRequest(ControllerContext controllerContext, MethodInfo methodInfo)  
+    {  
+        return (controllerContext.HttpContext.Request[ValueName] != null);  
+    }  
+    public string ValueName { get; private set; }  
+}
+
+</code>
+We need to decorate our method with the parameter MyActionSelectorAttribute as in the following code snippet:
+<code>
+  
+public string SayHello()  
+{
+
+    return "Hello from 'SayHello'.";  
+}  
+[MyActionSelectorAttribute("name")]  
+public string SayHello(string name)  
+{
+     return "Hello " + name + " from 'SayHello' ";  
+}
+
+</code>
