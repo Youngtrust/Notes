@@ -12,3 +12,25 @@ We can create action methods that return an object of any type, such as a string
 <br />
 <img src = "http://www.tutorialsteacher.com/Content/images/mvc/action-method.png" />
 
+The successful execution of an MVC controller action will produce an object derived from ActionResult. Rendering a view and redirecting the browser to a new URL are both valid types of results we can get from our controller. The complete list of ActionResult derived types that can be an output of action method are as follows.
+
+<br />
+
+<img src = "https://github.com/Youngtrust/Notes/blob/master/methods.png" />
+
+<h4>Overloading</h4>
+MVC supports the method overloading but it doesn't support method overloading based solely on signature, so this will fail. If we have two actions like the following then it fails. 
+<br />
+<code>
+  public string SayHello()
+  {
+  
+      return "Hello from SayHello"; 
+  }
+  
+  public string SayHello(string name)
+  {
+  
+      return "Hello" + name + "from 'SayHello'"
+  }
+ </code>
