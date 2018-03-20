@@ -48,4 +48,31 @@ whereas the PATCH method can be used in a generic way and does not require appli
 <h3>Areas in ASP.NET MVC</h3>
 Areas are smaller functional units in an asp.net MVC project. It allows us to divide the big web application project into smaller functional units. Each Area has its own controllers, models, and views.
 
+<hr />
+<h3>Explain $q service, deferred and promises?</h3>
+Promises are<strong> POST PROCESSING LOGICS </strong>which you want to execute after some operation / action is completed. 
+While deferred helps to control how and when those promise logics will execute.<br />
+<strong>
+We can think about promises as “WHAT” we want to fire after an operation is completed 
+while deferred controls “WHEN” and “HOW” those promises will execute.
+</strong><br />
+For example after an operation is complete you want to a send a mail, log in to log file and so on. So these operations you will define using promise. And these promise logics will be controlled by deferred.
+
+
+So once some action completes deferred gives a signal “Resolve”, “Reject” or “Notify” and depending on what kind of signal is sent the appropriate promise logic chain fires.
+
+“$q” is the angular service which provides promises and deferred functionality.
+
+Using promises, deferred and “q” service is a 4 step process:-
+
+Step 1:- Get the “q” service injected from Angular.
+
+Step 2 :- Get deferred object from “q” service object.
+
+Step 3 :- Get Promise object from deferred object.
+
+Step 4 :- Add logics to the promise object.
+
+
+
  
