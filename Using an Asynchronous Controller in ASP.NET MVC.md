@@ -43,6 +43,8 @@ to process the remainder of the request, including rendering the response.
 <h4>Converting Synchronous Action Methods to Asynchronous Action Methods</h4>
 The sample code below shows a synchronous action method that is used to display news items from a portal controller. 
 The request Portal/News?city=Seattle displays news for Seattle.
+
+
 <code>
 public class PortalController: Controller {
     public ActionResult News(string city) {
@@ -52,6 +54,8 @@ public class PortalController: Controller {
     }
 }
 </code>
+
+
 <code>
 public class PortalController : AsyncController {
     public void NewsAsync(string city) {
